@@ -9,6 +9,9 @@ import { ListComponent } from './Component/list/list.component';
 import { AddComponent } from './Component/add/add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditComponent } from './Component/edit/edit.component';
+import { TaskFilterPipe } from './pipes/task-filter.pipe';
+import { UserListComponent } from './Component/Component/user/user-list/user-list.component';
+import { UserFormComponent } from './Component/Component/user/user-form/user-form.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { EditComponent } from './Component/edit/edit.component';
     AppComponent,
     ListComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+    TaskFilterPipe,
+    UserListComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

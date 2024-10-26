@@ -10,6 +10,7 @@ import { Task } from '../../Models/task';
 })
 export class ListComponent implements OnInit {
 
+  searchTask:string='';
   task:Task[]=[]
 
   constructor(private taskService:TaskService, private router:Router){}
@@ -19,10 +20,14 @@ export class ListComponent implements OnInit {
   }
 
   deleteTask(taskId:number){
-    return this.taskService.deleteTask(taskId).subscribe(d=>{
-      alert("Task Delete Successfully...")
-      this.loadTask();      
-    })
+    if(confirm("If you want delete")){
+       this.taskService.deleteTask(taskId).subscribe(d=>{
+        alert("Task Delete Successfully...")
+        this.loadTask(); 
+      })
+    }
+         
+    
   }
 
   loadTask(){

@@ -1,7 +1,7 @@
 <div class="card mt-5 Larger shadow w-50 m-auto">
   <div class="container mt-3">
     <div class="d-grid gap-2 d-md-flex justify-content-between">
-      <input type="text" placeholder="Search Task" class="p-auto m-4 w-5" />
+      <input type="text" placeholder="Search Task" class="p-auto m-4 w-5" [(ngModel)]="searchTask"/>
       <button class="btn btn-dark p-auto m-4" type="button" [routerLink]="['/add']">+ Add New</button>
     </div>
     <table class="table table-bordered">
@@ -16,14 +16,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of task">
+        <tr *ngFor="let item of task | taskFilter:searchTask; let i = index ">
           <td scope="row">{{ item.id }}</td>
           <td>{{ item.title }}</td>
           <td>{{ item.description }}</td>
           <td>{{ item.dueDate | date }}</td>
           <td>{{ item.priority }}</td>
           <td>
-            <button type="button" class="btn btn-warning m-3">
+            <button type="button" class="btn btn-warning m-3" [routerLink]="['/edit', item.id]">
               <i class="bi bi-pencil-square"></i>
             </button>
 
