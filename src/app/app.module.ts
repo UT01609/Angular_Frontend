@@ -12,6 +12,7 @@ import { EditComponent } from './Component/edit/edit.component';
 import { TaskFilterPipe } from './pipes/task-filter.pipe';
 import { UserListComponent } from './Component/Component/user/user-list/user-list.component';
 import { UserFormComponent } from './Component/Component/user/user-form/user-form.component';
+import { UserPipe } from './Component/user.pipe';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { UserFormComponent } from './Component/Component/user/user-form/user-for
     EditComponent,
     TaskFilterPipe,
     UserListComponent,
-    UserFormComponent
+    UserFormComponent,
+    UserPipe
   ],
   imports: [
     BrowserModule,

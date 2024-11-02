@@ -7,13 +7,40 @@
       </form>
     </div>
   </nav>
-  <div class="offcanvas offcanvas-start show text-bg-dark" tabindex="-1" id="offcanvasDark" aria-labelledby="offcanvasDarkLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasDarkLabel">Offcanvas</h5>
-    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvasDark" aria-label="Close"></button>
+  <div class="d-flex">
+    
+      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 100vh;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+          <span class="fs-4">TaskManger</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item" >
+            <a href="#" class="nav-link " aria-current="page">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href=""/></svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link "aria-current="page" aria-current=""[routerLink]="['/list']">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href=""/></svg>
+              Task
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link " aria-current="page" [routerLink]="['/user-list']">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href=""/></svg>
+              User
+
+            </a>
+          </li>
+        </ul>
+        <hr>
+
+      </div>
+      <div style="width: 100%;">
+        <router-outlet></router-outlet>
+      </div>
+  
   </div>
-  <div class="offcanvas-body">
-    <p>Place offcanvas content here.</p>
-  </div>
-</div>
-<router-outlet></router-outlet>

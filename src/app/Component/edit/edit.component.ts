@@ -52,7 +52,7 @@ export class EditComponent implements OnInit {
                                         
     this.taskService.update(task).subscribe(data=>{
       alert("Task Update SuccessFully")
-      this.router.navigate(['/']);
+      this.router.navigate(['/list']);
     })
   }
 

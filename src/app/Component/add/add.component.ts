@@ -26,7 +26,7 @@ export class AddComponent {
     const task=this.taskForm.value;
     return this.taskservice.addTask(task).subscribe(data=>{
       alert("Task Create Successfully....")
-      this.router.navigate(['/'])
+      this.router.navigate(['/list'])
     })
   }
 

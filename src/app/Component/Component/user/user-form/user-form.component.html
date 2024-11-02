@@ -1,1 +1,60 @@
-<p>user-form works!</p>
+<div class="card mt-5 Larger shadow w-50 m-auto p-5">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <h1 class="m-2">{{isEditMode == true ? 'Update User' : 'Add New User' }}</h1>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name">
+        <small class="text-danger" *ngIf="userForm.get('name')?.invalid">
+          Name is required......
+        </small>
+      </div>
+      <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="text" class="form-control" id="password" formControlName="password">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="phone" formControlName="phone">
+          </div>
+          <h3>Address Information</h3>
+          <hr>
+          <div formGroupName="address">
+            <div class="mb-3">
+              <label for="addressLine1" class="form-label">Address Line1</label>
+              <input type="text" class="form-control" id="addressLine1" formControlName="addressLine1">
+              <small class="text-danger" *ngIf="userForm.get('address.addressLine1')?.invalid">
+                Address Line1 is required .......
+              </small>
+            </div>
+    
+            <div class="mb-3">
+              <label for="addressLine2" class="form-label">Address Line2</label>
+              <input type="text" class="form-control" id="addressLine2" formControlName="addressLine2">
+            </div>
+    
+            <div class="mb-3">
+              <label for="city" class="form-label">City</label>
+              <input type="text" class="form-control" id="city" formControlName="city">
+            </div>
+          </div>
+
+        <!-- <div class="mb-3">
+          <label for="priority" class="form-label">Priority</label>
+          <select class="form-select" aria-label="Default select example" id="priority" formControlName="priority">
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+          </select>
+        </div> -->
+       
+        <div class="m-3">
+          <button type="submit" class="btn btn-primary m-2 " [disabled]="userForm.invalid"  >{{isEditMode == true ? 'Update' : 'Save'}}</button>
+          <button type="submit" class="btn btn-secondary " [routerLink]="['/user-list']">Cancel</button>
+        </div>
+    </form>
+  </div>
+  

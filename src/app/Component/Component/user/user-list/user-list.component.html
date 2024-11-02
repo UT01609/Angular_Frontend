@@ -1,1 +1,46 @@
-<p>user-list works!</p>
+<div class="card mt-5 Larger shadow w-50 m-auto">
+    <div class="container mt-3">
+      <div class="d-grid gap-2 d-md-flex justify-content-between">
+        <input type="text" placeholder="Search User..." class="p-auto m-4 w-5" [(ngModel)]="searchUser"/>
+        <button class="btn btn-dark p-auto m-4" type="button" [routerLink]="['/add-user']">+ Add User</button>
+      </div>
+      <table class="table table-bordered">
+        <thead class="table-secondary">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Address</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of user | user:searchUser; let i = index;">
+            <td scope="row">{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.password  }}</td>
+            <td>{{ item.phone }}</td>
+            <td>
+              {{item.address?.addressLine1}}
+              {{item.address?.addressLine2}}
+              {{item.address?.city}}
+            </td>
+            <td>
+              <button type="button" class="btn btn-info m-3" (click)="onEdit(item.id)">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+  
+              <button type="button" class="btn btn-danger" (click)="deleteUser(item.id)">
+                <i class="bi bi-trash3-fill"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
