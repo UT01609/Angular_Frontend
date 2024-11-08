@@ -13,6 +13,11 @@ import { TaskFilterPipe } from './pipes/task-filter.pipe';
 import { UserListComponent } from './Component/Component/user/user-list/user-list.component';
 import { UserFormComponent } from './Component/Component/user/user-form/user-form.component';
 import { UserPipe } from './Component/user.pipe';
+import { AdminDashboardComponent } from './Component/admin-dashboard/admin-dashboard.component';
+import { RegisterComponent } from './Component/register/register.component';
+import { LoginComponent } from './Component/login/login.component';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 @NgModule({
@@ -24,7 +29,11 @@ import { UserPipe } from './Component/user.pipe';
     TaskFilterPipe,
     UserListComponent,
     UserFormComponent,
-    UserPipe
+    UserPipe,
+    AdminDashboardComponent,
+    RegisterComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -32,7 +41,8 @@ import { UserPipe } from './Component/user.pipe';
     CommonModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

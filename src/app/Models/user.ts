@@ -10,3 +10,11 @@ export interface user{
     address?:Address
     task:Task[];
 }
+
+export interface UserRegister{
+  fullName:string,
+  email:string,
+  password : string,
+  role : number,
+  agree :boolean
+}
